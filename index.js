@@ -30,3 +30,10 @@ function addOne(element) {
 
 console.log(arr.map(addOne));
 console.log(customArray.map(addOne));
+
+function reducer(accumulator, currentValue) {
+    return accumulator + currentValue;
+};
+
+console.log(arr.reduce(reducer, 0));
+console.log(customArray.reduce(reducer, 0));

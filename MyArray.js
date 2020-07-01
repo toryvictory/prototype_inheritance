@@ -69,3 +69,19 @@ myArrProto.map = function map(callback) {
     }
     return myArr;
 }
+
+myArrProto.reduce = function reduce(callback, initialValue) {
+    let counterStart;
+    let accumulator;
+    if (initialValue === undefined) {
+        counterStart = 1;
+        accumulator = this[0];
+    } else {
+        counterStart = 0;
+        accumulator = initialValue;
+    }
+    for (let i = counterStart; i < this.length; i++) {
+       accumulator = callback(accumulator, this[i], i, this);
+    }
+    return accumulator;
+}

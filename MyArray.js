@@ -31,3 +31,14 @@ myArrProto.find = function find(callback) {
     return element;
 };
 
+myArrProto.includes = function includes(valueToFind, fromIndex = 0) {
+    if (fromIndex < 0) {
+        fromIndex = this.length + fromIndex;
+    }
+    for (let i = fromIndex; i < this.length; i++) {
+        if (this[i] === valueToFind) {
+            return true;
+        }
+    }
+    return false;
+}

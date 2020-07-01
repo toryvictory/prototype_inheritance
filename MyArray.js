@@ -43,11 +43,21 @@ myArrProto.includes = function includes(valueToFind, fromIndex = 0) {
     return false;
 }
 
-myArrProto.join = function join(separator=',') {
+myArrProto.join = function join(separator = ',') {
     let string = '';
     for (let i = 0; i < this.length - 1; i++) {
         string = string + String(this[i]) + separator;
     }
     string = string + String(this[this.length - 1]);
     return string;
+}
+
+myArrProto.filter = function filter(callback) {
+    const myArr = new MyArray();
+    for (let i = 0; i < this.length; i++) {
+        if (callback(this[i], i, this)) {
+            myArr.push(this[i]);
+        }
+    }
+    return myArr;
 }

@@ -20,3 +20,7 @@ console.log(customArray.includes('a', -2));
 
 console.log(arr.join(''));
 console.log(customArray.join(''));
+
+console.log(arr.filter(isOdd));
+console.log(customArray.filter(isOdd));
+

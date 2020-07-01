@@ -6,3 +6,6 @@ function MyArray() {
         return (this instanceof MyArray);
     }
 }
+
+const myArrProto = new MyArray();
+MyArray.prototype = myArrProto;

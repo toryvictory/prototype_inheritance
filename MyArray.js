@@ -81,7 +81,15 @@ myArrProto.reduce = function reduce(callback, initialValue) {
         accumulator = initialValue;
     }
     for (let i = counterStart; i < this.length; i++) {
-       accumulator = callback(accumulator, this[i], i, this);
+        accumulator = callback(accumulator, this[i], i, this);
     }
     return accumulator;
+}
+
+
+myArrProto.pop = function pop() {
+    const lastElement = this[this.length - 1];
+    delete this[this.length - 1];
+    this.length--;
+    return lastElement;
 }

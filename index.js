@@ -37,3 +37,8 @@ function reducer(accumulator, currentValue) {
 
 console.log(arr.reduce(reducer, 0));
 console.log(customArray.reduce(reducer, 0));
+
+console.log(customArray.pop());
+console.log(customArray);
+
+

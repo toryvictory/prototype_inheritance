@@ -17,3 +17,6 @@ console.log(customArray.find(isOdd));
 
 console.log(arr.includes('a', -2));
 console.log(customArray.includes('a', -2));
+
+console.log(arr.join(''));
+console.log(customArray.join(''));

@@ -42,3 +42,12 @@ myArrProto.includes = function includes(valueToFind, fromIndex = 0) {
     }
     return false;
 }
+
+myArrProto.join = function join(separator=',') {
+    let string = '';
+    for (let i = 0; i < this.length - 1; i++) {
+        string = string + String(this[i]) + separator;
+    }
+    string = string + String(this[this.length - 1]);
+    return string;
+}

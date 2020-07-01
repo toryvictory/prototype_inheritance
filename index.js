@@ -24,3 +24,9 @@ console.log(customArray.join(''));
 console.log(arr.filter(isOdd));
 console.log(customArray.filter(isOdd));
 
+function addOne(element) {
+    return element + "1";
+}
+
+console.log(arr.map(addOne));
+console.log(customArray.map(addOne));

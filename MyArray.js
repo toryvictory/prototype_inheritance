@@ -61,3 +61,11 @@ myArrProto.filter = function filter(callback) {
     }
     return myArr;
 }
+
+myArrProto.map = function map(callback) {
+    const myArr = new MyArray();
+    for (let i = 0; i < this.length; i++) {
+        myArr.push(callback(this[i], i, this));
+    }
+    return myArr;
+}

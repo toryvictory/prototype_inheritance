@@ -41,4 +41,11 @@ console.log(customArray.reduce(reducer, 0));
 console.log(customArray.pop());
 console.log(customArray);
 
+const customArray2 = new MyArray();
+customArray2.push('f', 'd', customArray);
+const customArray3 = new MyArray();
+customArray3.push(33, 88, customArray2, customArray);
+
+console.log(customArray3.flat(2));
+
 

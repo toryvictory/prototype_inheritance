@@ -113,11 +113,14 @@ myArrProto.concat = function concat() {
 myArrProto.flat = function flat(depth = 1) {
 
     let myArray = new this.constructor();
+    if (depth < 0) return this;
+    if (depth === 0) return this.filter(i => i !== undefined);
     for (let i = 0; i < this.length; i++) {
-        myArray = myArray.concat(this[i]);
-    }
-    if (--depth > 0) {
-        myArray = myArray.flat();
+        if (this[i] instanceof MyArray) {
+            myArray = myArray.concat(this[i].flat(depth - 1));
+        } else if (this[i] !== undefined) {
+            myArray.push(this[i]);
+        }
     }
     return myArray;
 }

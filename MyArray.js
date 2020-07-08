@@ -2,9 +2,12 @@
 
 function MyArray() {
     if (!new.target) {
-        return new MyArray();
+        return new MyArray(...arguments);
     }
     this.length = 0;
+    for (let i = 0; i < arguments.length; i++) {
+        this[this.length++] = arguments[i];
+    }
     this.isMyArray = function isMyArray() {
         return (this instanceof MyArray);
     }
